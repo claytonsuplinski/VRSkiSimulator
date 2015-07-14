@@ -2,9 +2,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Cow Catchers</title>
-		<script type='text/javascript' src='jquery.min.js'></script>
+		<title>VR Ski Simulator</title>
+
 		 <!-- Latest compiled and minified CSS -->
 		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
@@ -13,6 +12,10 @@
 
 		<!-- Latest compiled JavaScript -->
 		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+		
+		<link href='http://fonts.googleapis.com/css?family=Josefin+Sans' rel='stylesheet' type='text/css'>
+		
+		<script type='text/javascript' src='jquery.min.js'></script>
 		<script type="text/javascript">
 		<!--
 		var unityObjectUrl = "UnityObject2.js";
@@ -65,25 +68,22 @@
 						break;
 					}
 				});
-				u.initPlugin(jQuery("#unityPlayer")[0], "SkiSlopeSimulator.unity3d");
+				u.initPlugin(jQuery("#unityPlayer")[0], "SkiSimulatorWeb.unity3d");
 			});
 		-->
 		</script>
 		<style type="text/css">
 		<!--
-		
+		*{
+			font-family: 'Josefin Sans', sans-serif !important;
+			font-weight:100 !important;
+		}
 		body {
-			font-family: Helvetica, Verdana, Arial, sans-serif;
 			background-color: white;
 			color: black;
 			text-align: center;
 			margin:0 !important;
-			background: lightgreen;
-			background-image: -webkit-repeating-linear-gradient(-45deg, black, black, #2a2a2a 6px, #2a2a2a 6px);
-			background-image: -moz-repeating-linear-gradient(-45deg, black, black, #2a2a2a 6px, #2a2a2a 6px);
-			background-image: -ms-repeating-linear-gradient(-45deg, black, black, #2a2a2a 6px, #2a2a2a 6px);
-			background-image: -o-repeating-linear-gradient(-45deg, black, black, #2a2a2a 6px, #2a2a2a 6px);
-			background-image: repeating-linear-gradient(-45deg, lightgreen, lightgreen, #73BE73 5%, #73BE73 5%);
+			background: #333;
 		}
 		a:link, a:visited {
 			color: #000;
@@ -138,12 +138,12 @@
 		
 		.panel{width:90% !important;text-align:center !important;margin-left:5%;}
 		.panel-heading{
-			background:#09150C;border-color:black !important;border-width:10px;border-radius:0px;;
-			background-image: -webkit-repeating-linear-gradient(-45deg, black, black, #2a2a2a 6px, #2a2a2a 6px);
-			background-image: -moz-repeating-linear-gradient(-45deg, black, black, #2a2a2a 6px, #2a2a2a 6px);
-			background-image: -ms-repeating-linear-gradient(-45deg, black, black, #2a2a2a 6px, #2a2a2a 6px);
-			background-image: -o-repeating-linear-gradient(-45deg, black, black, #2a2a2a 6px, #2a2a2a 6px);
-			background-image: repeating-linear-gradient(45deg, #040805, #040805, #09150C 30%, #09150C 30%);
+			border-color:black !important;border-width:10px;border-radius:0px;;
+			background:#3C4453;
+			color:white;
+		}
+		.sub-header{
+			background:#5A4040;
 		}
 		.panel-body{
 			border-width:0px;
@@ -152,16 +152,21 @@
 		embed{
 			width:100% !important;
 		}
+		a, a:hover, a:focus, a:active{
+			text-decoration:none;
+		}
 		-->
 		</style>
 	</head>
 	<body>
-		<br>
 		<div class="content">
-			<div class="panel panel-primary" style="border-color:black;border-width:10px;">
-				<div class="panel-heading" style=""><img src="" style="width:30%;height:auto;min-width:200px;"></div>
+			<div class="panel" style="border-color:black;border-width:10px;">
+				<div class="panel-heading" style=""><h1>VR Ski Simulator</h1></div>
+				<a href="https://blogs.discovery.wisc.edu/projects/category/projects/ski-slope-simulator/">
+					<div class="panel-heading sub-header"><h3>Blog</h3></div>
+				</a>
 				<div class="panel-body">
-					<div id="unityPlayer" style="width:100%">
+					<div id="unityPlayer">
 						<div class="missing">
 							<a href="http://unity3d.com/webplayer/" title="Unity Web Player. Install now!">
 								<img alt="Unity Web Player. Install now!" src="http://webplayer.unity3d.com/installation/getunity.png" width="193" height="63" />
